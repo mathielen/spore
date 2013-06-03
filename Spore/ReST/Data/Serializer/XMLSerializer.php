@@ -40,7 +40,7 @@ class XMLSerializer extends Base
 
         if (is_array($array) || is_object($array)) {
             foreach ($array as $key => $value) {
-            	//TODO MTH hack, is list => iterate
+            	//is list => iterate
             	if (is_array($value) && is_numeric(key($value))) {
             		$xml .= self::generateXmlFromArray($value, $key);
             		continue;
