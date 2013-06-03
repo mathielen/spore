@@ -69,7 +69,7 @@ class XMLDeserializer extends Base
 
     private static function elementToObject($element)
     {
-    	//TODO MTH hack
+    	//MTH hack
     	if (empty($element) || is_scalar($element)) {
             return (string) $element;
         } else {
