@@ -42,6 +42,9 @@
             {
                 $env['slim.input_original'] = $env['slim.input'];
                 $env['slim.input'] = $this->parse($env['slim.input'], $env['CONTENT_TYPE']);
+
+                //TODO MTH Hack to access inp-org
+                $this->getApplication()->request()->originalInput = $env['slim.input_original'];
             }
 
             return $this->next->call();
