@@ -40,8 +40,9 @@
 
             if(isset($env['CONTENT_TYPE']))
             {
+                list($contentType) = explode(';', $env['CONTENT_TYPE']);
                 $env['slim.input_original'] = $env['slim.input'];
-                $env['slim.input'] = $this->parse($env['slim.input'], $env['CONTENT_TYPE']);
+                $env['slim.input'] = $this->parse($env['slim.input'], $contentType);
 
                 //TODO MTH Hack to access inp-org
                 $this->getApplication()->request()->originalInput = $env['slim.input_original'];
